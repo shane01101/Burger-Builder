@@ -10,6 +10,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
 		};
 
 		componentWillMount() {
+			//change to use constructor since will be deprecated soon
 			axios.interceptors.request.use(req => {
 				this.setState({ error: null });
 				return req;
