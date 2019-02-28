@@ -6,14 +6,14 @@ import Button from '../../components/UI/Button/Button';
 import classes from './Auth.css';
 import * as actions from '../../store/actions/index';
 
-export class Auth extends Component {
+class Auth extends Component {
 	state = {
 		controls: {
 			email: {
 				elementType: 'input',
 				elementConfig: {
 					type: 'email',
-					placeholder: 'Email Address'
+					placeholder: 'Mail Address'
 				},
 				value: '',
 				validation: {
@@ -93,7 +93,7 @@ export class Auth extends Component {
 		this.props.onAuth(
 			this.state.controls.email.value,
 			this.state.controls.password.value,
-			this.state.controls.isSignup
+			this.state.isSignup
 		);
 	};
 
@@ -105,7 +105,6 @@ export class Auth extends Component {
 
 	render() {
 		const formElementsArray = [];
-
 		for (let key in this.state.controls) {
 			formElementsArray.push({
 				id: key,
